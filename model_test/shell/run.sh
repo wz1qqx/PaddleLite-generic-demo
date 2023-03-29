@@ -6,7 +6,7 @@
 #MODEL_NAME=conv_add_relu_dwconv_add_relu_x27_pool2d_224_int8_per_channel
 #MODEL_NAME=conv_add_relu_dwconv_add_relu_x27_pool2d_mul_add_224_int8_per_channel
 #MODEL_NAME=conv_add_relu_dwconv_add_relu_conv_add_relu_dwconv_add_relu_224_int8_per_channel
-MODEL_NAME=conv_bn_relu_224_fp32
+# MODEL_NAME=conv_bn_relu_224_fp32
 #MODEL_NAME=conv_bn_relu_dwconv_bn_relu_224_fp32
 #MODEL_NAME=conv_bn_relu_dwconv_bn_relu_x27_224_fp32
 #MODEL_NAME=conv_bn_relu_dwconv_bn_relu_x27_pool2d_224_fp32
@@ -15,9 +15,9 @@ MODEL_NAME=conv_bn_relu_224_fp32
 #MODEL_NAME=conv_bn_relu_pool2d_res2a_224_fp32
 #MODEL_NAME=conv_bn_relu_pool2d_res2a_res2b_224_fp32
 #MODEL_NAME=conv_bn_relu_pool2d_res2a_res2b_res2c_224_fp32
-INPUT_SHAPES="1,3,224,224"
-INPUT_TYPES="float32"
-OUTPUT_TYPES="float32"
+# INPUT_SHAPES="1,3,224,224"
+# INPUT_TYPES="float32"
+# OUTPUT_TYPES="float32"
 
 #MODEL_NAME=conv_add_144_192_int8_per_layer
 #MODEL_NAME=conv_add_scale_144_192_int8_per_layer
@@ -34,6 +34,11 @@ OUTPUT_TYPES="float32"
 #INPUT_SHAPES="1,3,384,384"
 #INPUT_TYPES="float32"
 #OUTPUT_TYPES="float32"
+
+MODEL_NAME=hrnet
+INPUT_SHAPES="1,3,512,960"
+INPUT_TYPES="float32"
+OUTPUT_TYPES="float32"
 
 #MODEL_NAME=dwconv_ic_128_groups_128_oc_256_per_layer
 #INPUT_SHAPES="1,3,320,320"
@@ -79,7 +84,7 @@ if [ -n "$5" ]; then
   TARGET_OS=$5
 fi
 
-TARGET_ABI=arm64
+TARGET_ABI=amd64
 if [ -n "$6" ]; then
   TARGET_ABI=$6
 fi
@@ -90,7 +95,7 @@ fi
 # Ascend310: NNADAPTER_DEVICE_NAMES=huawei_ascend_npu
 # CambriconMLU: NNADAPTER_DEVICE_NAMES=cambricon_mlu
 # CPU only: NNADAPTER_DEVICE_NAMES=cpu
-NNADAPTER_DEVICE_NAMES="cpu"
+NNADAPTER_DEVICE_NAMES="xpu"
 if [ -n "$7" ]; then
   NNADAPTER_DEVICE_NAMES="$7"
 fi
