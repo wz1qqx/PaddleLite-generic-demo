@@ -308,7 +308,7 @@ void process(std::shared_ptr<paddle::lite_api::PaddlePredictor> predictor,
     }
     printf("[%d] Prediction time: %f ms \n", i, cur_cost);
   }
-  print_output_tensors(predictor, output_types);
+  // print_output_tensors(predictor, output_types);
   printf("Prediction time: avg %f ms, max %f ms, min %f ms\n",
          total_cost / REPEAT_COUNT,
          max_cost,

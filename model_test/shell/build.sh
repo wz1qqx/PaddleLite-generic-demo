@@ -20,7 +20,7 @@ if [ -n "$1" ]; then
   TARGET_OS=$1
 fi
 
-TARGET_ABI=arm64
+TARGET_ABI=amd64
 if [ -n "$2" ]; then
   TARGET_ABI=$2
 fi
